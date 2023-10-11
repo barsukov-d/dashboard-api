@@ -8,7 +8,7 @@ userRouter.use((req, res, next) => {
 })
 
 userRouter.post('/login', (req, res) => {
-	res.send('login')
+	res.send('login 777')
 })
 userRouter.post('/register', (req, res) => {
 	res.send('register')
