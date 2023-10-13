@@ -1,4 +1,5 @@
 import { BaseController } from '../common/base.controller'
+import { HTTPError } from '../errors/http-error.class'
 import { LoggerService } from '../logger/logger.service'
 import { NextFunction, Request, Response } from 'express'
 
@@ -12,10 +13,11 @@ export class UserController extends BaseController {
 	}
 
 	public login(req: Request, res: Response, next: NextFunction) {
-		this.ok(res, 'login')
+		next(new HTTPError(401, 'Unauthorized error message fuck', 'Unauthorized error context fuck'))
 	}
 
 	public register(req: Request, res: Response, next: NextFunction) {
-		this.ok(res, 'register')
+		this.ok(res, 'login')
+		// this.ok(res, 'register')
 	}
 }
